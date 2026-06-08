@@ -2,7 +2,7 @@
 console.log('ALATRON JS Yüklendi');
 
 /* ================================================================
-   ANDROID / iOS VIEWPORT YÜKSEKLİK DÜZELTMESİ
+   ANDROID / iOS VIEWPORT YÜKSEKLİĞİ DÜZELTMESİ
    
    Problem: Android Chrome'da 100vh adres çubuğunu hesaba katmaz.
    CSS dvh desteği yoksa JS ile --vh custom property set ediyoruz.
@@ -338,7 +338,7 @@ function closeLightbox(lightbox) {
     }
 }
 
-// ========== REFERANS SLİDER ==========
+// ========== REFERANS SLİDER (✅ DÜZELTILMIŞ) ==========
 function initReferenceSlider() {
     const track = document.getElementById('sliderTrack');
     const nextBtn = document.getElementById('nextBtn');
@@ -356,6 +356,9 @@ function initReferenceSlider() {
         const cardWidth = cards[0].offsetWidth;
         const gap = 30;
         const offset = currentIndex * (cardWidth + gap);
+        
+        // ✅ Smooth transition ekle
+        track.style.transition = 'transform 0.4s ease-in-out';
         track.style.transform = `translateX(-${offset}px)`;
     }
 
@@ -419,20 +422,20 @@ function initReferenceSlider() {
 // ========== AKTİF SAYFA AYARLAMA ==========
 function setActivePage() {
    let currentPage = window.location.pathname.split('/').pop() || 'index.html';
-   // Eğer pathname boşsa index.html olarak ayarla
-   if (!currentPage || currentPage === '') {
-       currentPage = 'index.html';
-   }
-   const navLinks = document.querySelectorAll('.nav-menu a');
+    // Eğer pathname boşsa index.html olarak ayarla
+    if (!currentPage || currentPage === '') {
+        currentPage = 'index.html';
+    }
+    const navLinks = document.querySelectorAll('.nav-menu a');
 
-   navLinks.forEach(link => {
-       const href = link.getAttribute('href');
-       if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-           link.classList.add('active');
-       } else {
-           link.classList.remove('active');
-       }
-   });
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
 }
 
 // ========== SCROLL TO TOP ==========

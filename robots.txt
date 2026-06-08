@@ -1,0 +1,17 @@
+# ALATRON - robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.php$
+Disallow: /*?*
+
+Sitemap: https://www.alatron.com.tr/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
