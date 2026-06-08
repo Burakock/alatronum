@@ -1,0 +1,109 @@
+alatron/
+│
+├── index.html                          ✅ Schema.org LocalBusiness eklenecek
+├── hizmetler.html                      ✅ footer yılı düzeltilecek (2025→2026)
+├── projeler.html                       ✅ footer yılı düzeltilecek (2025→2026)
+├── urunler.html                        ✅ footer yılı düzeltilecek (2025→2026)
+├── iletisim.html                       ✅ footer yılı düzeltilecek (2025→2026)
+├── google6979cd02ece6f04a.html         (değişmeyecek)
+│
+├── css/
+│   ├── style.css                       (değişmeyecek)
+│   └── responsive.css                  (değişmeyecek)
+│
+├── js/
+│   └── main.js                         ✅ hero-stats-scroll.js kaldırılacak (zaten main.js'te var)
+│
+├── images/
+│   ├── logo.png
+│   ├── hero-bg.jpg
+│   ├── hero-mobile.jpg                 ⚠️  EKLENMESİ GEREKEN (mobil için ayrı görsel)
+│   ├── placeholder.jpg
+│   ├── elektrik1.jpg
+│   ├── elektrik2.jpg
+│   ├── insaat1.jpg
+│   ├── insaat2.jpg
+│   ├── taahut1.jpg
+│   ├── taahut2.jpg
+│   ├── madencilik1.jpg
+│   ├── madencilik2.jpg
+│   │
+│   ├── management/
+│   │   ├── gokhan-ocak.jpg
+│   │   ├── bilgesu-ocak.jpg
+│   │   ├── sena-ocak.jpg
+│   │   └── berke-ocak.jpg
+│   │
+│   └── reference/
+│       ├── logo1.png
+│       ├── logo2.png
+│       ├── logo3.png
+│       ├── logo4.png
+│       ├── logo5.png
+│       └── logo6.png
+│
+├── icon/
+│   ├── favicon.ico
+│   ├── favicon-16x16.png
+│   ├── favicon-32x32.png
+│   ├── apple-touch-icon.png
+│   ├── android-chrome-192x192.png      ⚠️  EKLENMESİ GEREKEN (manifest için)
+│   ├── android-chrome-512x512.png      ⚠️  EKLENMESİ GEREKEN (manifest için)
+│   └── site.webmanifest                ✅ theme_color düzeltilecek (#1a472a → #0a1628)
+│
+├── manifest.json                       ✅ icon path'leri düzeltilecek (/icon/ klasörüne)
+│
+├── robots.txt                          ✅ favicon path düzeltilecek (icon/favicon.ico)
+│
+├── sitemap.xml                         ✅ son güncelleme tarihleri güncellenecek
+│
+├── web.config                          (değişmeyecek)
+│
+├── proje-detay/                        ✅ KLASÖRİÇİNE TAŞINACAK
+│   ├── elektrik-kule.html              (şu an kök dizinde → buraya taşı)
+│   ├── ticari-bina.html
+│   ├── endustriyel-tesis.html
+│   ├── maden-sahasi.html
+│   ├── elektrik-dagitim.html
+│   └── karma-tesis.html
+│
+└── urun-detay/                         ✅ KLASÖRİÇİNE TAŞINACAK
+    ├── transformator.html              (şu an kök dizinde → buraya taşı)
+    ├── rmu.html
+    ├── enerji-panoları.html
+    └── yuksek-gerilim-kablo.html
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+YAPILACAKLAR LİSTESİ (SIRAYLA)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ADIM 1 → site.webmanifest
+  - theme_color: "#1a472a"  →  "#0a1628" yap
+  - background_color: "#1a472a"  →  "#0a1628" yap
+
+ADIM 2 → manifest.json
+  - icon src: "/android-chrome-192x192.png"  →  "/icon/android-chrome-192x192.png"
+  - icon src: "/android-chrome-512x512.png"  →  "/icon/android-chrome-512x512.png"
+
+ADIM 3 → robots.txt
+  - "Allow: /favicon.ico"  →  "Allow: /icon/favicon.ico" yap
+
+ADIM 4 → index.html
+  - <head> içine Schema.org LocalBusiness JSON-LD ekle
+  - <head> içine hreflang ekle
+
+ADIM 5 → hizmetler.html, projeler.html, urunler.html, iletisim.html
+  - Footer'daki © 2025  →  © 2026 yap (index.html zaten 2026)
+
+ADIM 6 → Dosya konumları
+  - elektrik-kule.html  →  proje-detay/ klasörüne taşı
+  - transformator.html  →  urun-detay/ klasörüne taşı
+
+ADIM 7 → hero-stats-scroll.js
+  - Bu dosyayı SİL (içeriği zaten main.js'te mevcut, gereksiz)
+
+ADIM 8 → Eksik dosyalar (kendin oluşturacaksın)
+  - icon/android-chrome-192x192.png  →  favicon.ico'dan türet
+  - icon/android-chrome-512x512.png  →  yüksek çözünürlüklü logo kullan
+  - images/hero-mobile.jpg           →  dikey/portre oryantasyonlu hero görseli

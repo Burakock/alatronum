@@ -1,0 +1,13 @@
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+Allow: /images/logo.png
+Allow: /icon/favicon.ico
+Allow: /icon/apple-touch-icon.png
+
+User-agent: *
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /private/
+
+Sitemap: https://www.alatron.com.tr/sitemap.xml
